@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500px" height="200px"></canvas>
+</body>
+<script>
+    let hCN = function (chieuDai, chieuRong) {
+        this.cd = chieuDai;
+        this.cr = chieuRong;
+        this.getS = function () {
+            return this.cd*this.cr;
+        }
+        this.getP = function () {
+            return 2*(this.cr+this.cd);
+        }
+        this.getChieuDai = function () {
+            return this.cd;
+        }
+        this.getCheuRong = function () {
+            return this.cr;
+        }
+    }
+    let HCN = new hCN(4,3);
+    alert(HCN.getS()+","+HCN.getP());
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0,0,HCN.getChieuDai()*50,HCN.getCheuRong()*50);
+
+</script>
+</html>
